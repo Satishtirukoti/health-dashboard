@@ -1,4 +1,4 @@
- National Healthcare Oversight Dashboard
+National Healthcare Oversight Dashboard
 
 A web-based healthcare analytics platform that provides real-time insights into hospital performance, patient demographics, and medication safety metrics using WHO, HealthData.gov, and openFDA data sources.
 
@@ -11,26 +11,3 @@ A web-based healthcare analytics platform that provides real-time insights into 
 - Drug event tracking
 - Secure API handling with CORS and error protection
 
-Folder Structure
-
-HEALTH-DASHBOARD/
-│
-├── backend/
-│   ├── server.js
-│   ├── data-mocks.js
-│   ├── package.json
-│   ├── package-lock.json
-│
-├── frontend/
-│   ├── index.html
-│   ├── styles.css
-│   ├── app.js
-│
-├── .gitignore
-└── README.md
-Licensed under the MIT License — free to use and modify.
-
-👨‍💻 Author
-Satish Tirukoti
-GitHub Profile
-College Student | Passionate about Data Analytics & Software Development
