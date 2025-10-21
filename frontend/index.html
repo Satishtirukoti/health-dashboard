@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>National Healthcare Oversight Organization</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div class="dashboard">
+<aside class="sidebar">
+<div class="sidebar-header">
+<div class="logo">🏥</div>
+<h2>NHO</h2>
+</div>
+<nav class="nav-menu">
+<a href="#" class="nav-item active" data-section="welcome">🏠 Home</a>
+<a href="#" class="nav-item" data-section="dashboard">📊 Dashboard</a>
+<a href="#" class="nav-item" data-section="patients">👥 Patients</a>
+<a href="#" class="nav-item" data-section="medications">💊 Medications</a>
+<a href="#" class="nav-item" data-section="analytics">📈 Analytics</a>
+</nav>
+</aside>
+<main class="main-content">
+<header class="top-bar">
+<div class="header-title">
+<h1>National Healthcare Oversight Organization</h1>
+<p>Real-time health analytics and monitoring system</p>
+</div>
+<div class="header-controls">
+<select id="hospitalSelect">
+<option value="all">All Hospitals Network</option>
+<option value="general">City General Hospital</option>
+<option value="memorial">Memorial Medical Center</option>
+<option value="university">University Health System</option>
+<option value="regional">Regional Healthcare Network</option>
+<option value="central">Central Medical Complex</option>
+<option value="metro">Metro Health Services</option>
+<option value="community">Community Care Hospital</option>
+<option value="specialty">Specialty Medical Institute</option>
+<option value="advanced">Advanced Healthcare Center</option>
+<option value="integrated">Integrated Health Network</option>
+</select>
+<button class="btn-refresh" id="refreshBtn">🔄 Refresh</button>
+</div>
+</header>
+<div class="content">
+<div id="welcome-section" class="section-content active">
+<div class="welcome-container">
+<div class="welcome-hero">
+<div class="hospital-illustration">
+<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23e0f2fe' width='800' height='600'/%3E%3Crect fill='%233b82f6' x='250' y='150' width='300' height='300' rx='10'/%3E%3Crect fill='%23ffffff' x='280' y='180' width='60' height='80'/%3E%3Crect fill='%23ffffff' x='360' y='180' width='60' height='80'/%3E%3Crect fill='%23ffffff' x='460' y='180' width='60' height='80'/%3E%3Crect fill='%23ffffff' x='280' y='280' width='60' height='80'/%3E%3Crect fill='%23ffffff' x='360' y='280' width='60' height='80'/%3E%3Crect fill='%23ffffff' x='460' y='280' width='60' height='80'/%3E%3Crect fill='%23ef4444' x='350' y='100' width='100' height='30' rx='5'/%3E%3Ctext x='400' y='120' text-anchor='middle' fill='white' font-family='Arial' font-size='16' font-weight='bold'%3EHOSPITAL%3C/text%3E%3Ccircle fill='%23ef4444' cx='400' cy='350' r='40'/%3E%3Crect fill='white' x='390' y='330' width='20' height='40'/%3E%3Crect fill='white' x='380' y='340' width='40' height='20'/%3E%3C/svg%3E" alt="Hospital"/>
+</div>
+<div class="welcome-content">
+<h1>Welcome to National Healthcare Oversight Organization</h1>
+<p class="subtitle">
+Comprehensive Healthcare Analytics & Management Platform
+</p>
+<div class="welcome-stats">
+<div class="stat-item">
+<div class="stat-number">1,850+</div>
+<div class="stat-label">Hospitals Connected</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">3.2M+</div>
+<div class="stat-label">Patients Served</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">18K+</div>
+<div class="stat-label">Healthcare Professionals</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">650+</div>
+<div class="stat-label">Medications Tracked</div>
+</div>
+</div>
+<button class="cta-button" onclick="document.querySelector('[data-section=dashboard]').click()">
+View Dashboard →
+</button>
+</div>
+</div>
+</div>
+</div>
+<div id="dashboard-section" class="section-content">
+<div class="kpi-row">
+<div class="kpi-card">
+<div class="kpi-icon">💰</div>
+<div class="kpi-info">
+<p class="kpi-label">Total Revenue</p>
+<p class="kpi-value">$14,850M</p>
+</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-icon">👩</div>
+<div class="kpi-info">
+<p class="kpi-label">Female Patients</p>
+<p class="kpi-value">1.65M</p>
+</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-icon">👥</div>
+<div class="kpi-info">
+<p class="kpi-label">Total Patients</p>
+<p class="kpi-value">3.20M</p>
+</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-icon">👨</div>
+<div class="kpi-info">
+<p class="kpi-label">Male Patients</p>
+<p class="kpi-value">1.48M</p>
+</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-icon">📅</div>
+<div class="kpi-info">
+<p class="kpi-label">Year</p>
+<p class="kpi-value">2025</p>
+</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-icon">🏥</div>
+<div class="kpi-info">
+<p class="kpi-label">Active Hospitals</p>
+<p class="kpi-value">1,850</p>
+</div>
+</div>
+</div>
+<div class="charts-grid">
+<div class="chart-box">
+<h3>Blood Type Distribution</h3>
+<canvas id="bloodTypeChart"></canvas>
+</div>
+<div class="chart-box">
+<h3>Gender Distribution</h3>
+<canvas id="genderChart"></canvas>
+</div>
+<div class="chart-box">
+<h3>Age Group Distribution</h3>
+<canvas id="ageGroupChart"></canvas>
+</div>
+<div class="chart-box">
+<h3>Top Medications</h3>
+<canvas id="medicationChart"></canvas>
+</div>
+<div class="chart-box">
+<h3>Disease Prevalence</h3>
+<canvas id="diseaseChart"></canvas>
+</div>
+<div class="chart-box">
+<h3>Patients by Year</h3>
+<canvas id="yearChart"></canvas>
+</div>
+<div class="chart-box">
+<h3>Monthly Admission Trends</h3>
+<canvas id="admissionTrendChart"></canvas>
+</div>
+<div class="chart-box">
+<h3>Patients by Department</h3>
+<canvas id="departmentChart"></canvas>
+</div>
+</div>
+</div>
+<div id="patients-section" class="section-content">
+<div class="section-header">
+<h2>Patient Management System</h2>
+<p>Managing 3.2M patients across 1,850 hospitals nationwide</p>
+</div>
+<div class="data-table">
+<table>
+<thead>
+<tr>
+<th>Patient ID</th>
+<th>Name</th>
+<th>Age</th>
+<th>Gender</th>
+<th>Blood Type</th>
+<th>Hospital</th>
+<th>Condition</th>
+<th>Admission Date</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NHO-2025-001</td>
+<td>John Anderson</td>
+<td>45</td>
+<td>Male</td>
+<td>O+</td>
+<td>City General Hospital</td>
+<td>Type 2 Diabetes</td>
+<td>Jan 15, 2025</td>
+<td><span class="status-badge active">Active</span></td>
+</tr>
+<tr>
+<td>NHO-2025-002</td>
+<td>Sarah Mitchell</td>
+<td>32</td>
+<td>Female</td>
+<td>A+</td>
+<td>Memorial Medical Center</td>
+<td>Hypertension</td>
+<td>Jan 18, 2025</td>
+<td><span class="status-badge active">Active</span></td>
+</tr>
+<tr>
+<td>NHO-2025-003</td>
+<td>Michael Thompson</td>
+<td>58</td>
+<td>Male</td>
+<td>B+</td>
+<td>University Health System</td>
+<td>Coronary Heart Disease</td>
+<td>Jan 12, 2025</td>
+<td><span class="status-badge critical">Critical</span></td>
+</tr>
+<tr>
+<td>NHO-2025-004</td>
+<td>Emily Davis</td>
+<td>28</td>
+<td>Female</td>
+<td>AB+</td>
+<td>Regional Healthcare Network</td>
+<td>Bronchial Asthma</td>
+<td>Jan 20, 2025</td>
+<td><span class="status-badge active">Active</span></td>
+</tr>
+<tr>
+<td>NHO-2025-005</td>
+<td>Robert Wilson</td>
+<td>41</td>
+<td>Male</td>
+<td>O-</td>
+<td>Central Medical Complex</td>
+<td>Chronic Back Pain</td>
+<td>Jan 08, 2025</td>
+<td><span class="status-badge recovered">Recovered</span></td>
+</tr>
+<tr>
+<td>NHO-2025-006</td>
+<td>Jennifer Brown</td>
+<td>35</td>
+<td>Female</td>
+<td>A-</td>
+<td>Metro Health Services</td>
+<td>Hypothyroidism</td>
+<td>Jan 22, 2025</td>
+<td><span class="status-badge active">Active</span></td>
+</tr>
+<tr>
+<td>NHO-2025-007</td>
+<td>David Martinez</td>
+<td>52</td>
+<td>Male</td>
+<td>B-</td>
+<td>Community Care Hospital</td>
+<td>Chronic Kidney Disease</td>
+<td>Jan 10, 2025</td>
+<td><span class="status-badge critical">Critical</span></td>
+</tr>
+<tr>
+<td>NHO-2025-008</td>
+<td>Lisa Garcia</td>
+<td>29</td>
+<td>Female</td>
+<td>O+</td>
+<td>Specialty Medical Institute</td>
+<td>Chronic Migraine</td>
+<td>Jan 25, 2025</td>
+<td><span class="status-badge active">Active</span></td>
+</tr>
+<tr>
+<td>NHO-2025-009</td>
+<td>James Rodriguez</td>
+<td>47</td>
+<td>Male</td>
+<td>AB-</td>
+<td>Advanced Healthcare Center</td>
+<td>COPD</td>
+<td>Jan 14, 2025</td>
+<td><span class="status-badge active">Active</span></td>
+</tr>
+<tr>
+<td>NHO-2025-010</td>
+<td>Patricia Lee</td>
+<td>39</td>
+<td>Female</td>
+<td>A+</td>
+<td>Integrated Health Network</td>
+<td>Rheumatoid Arthritis</td>
+<td>Jan 19, 2025</td>
+<td><span class="status-badge recovered">Recovered</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="medications-section" class="section-content">
+<div class="section-header">
+<h2>National Medication Inventory</h2>
+<p>
+Tracking 650+ medications across 1,850 hospitals - Updated January 2025
+</p>
+</div>
+<div class="medication-grid">
+<div class="med-card">
+<div class="med-icon">💊</div>
+<h3>Aspirin</h3>
+<p class="med-stock">Stock: 1,420,000 units</p>
+<p class="med-prescribed">Prescribed: 935,000 times</p>
+<p class="med-events">Adverse Events: 1,380</p>
+</div>
+<div class="med-card">
+<div class="med-icon">💊</div>
+<h3>Ibuprofen</h3>
+<p class="med-stock">Stock: 1,150,000 units</p>
+<p class="med-prescribed">Prescribed: 780,000 times</p>
+<p class="med-events">Adverse Events: 1,120</p>
+</div>
+<div class="med-card">
+<div class="med-icon">💊</div>
+<h3>Metformin</h3>
+<p class="med-stock">Stock: 890,000 units</p>
+<p class="med-prescribed">Prescribed: 625,000 times</p>
+<p class="med-events">Adverse Events: 850</p>
+</div>
+<div class="med-card">
+<div class="med-icon">💊</div>
+<h3>Lisinopril</h3>
+<p class="med-stock">Stock: 720,000 units</p>
+<p class="med-prescribed">Prescribed: 510,000 times</p>
+<p class="med-events">Adverse Events: 690</p>
+</div>
+<div class="med-card">
+<div class="med-icon">💊</div>
+<h3>Amoxicillin</h3>
+<p class="med-stock">Stock: 840,000 units</p>
+<p class="med-prescribed">Prescribed: 670,000 times</p>
+<p class="med-events">Adverse Events: 520</p>
+</div>
+<div class="med-card">
+<div class="med-icon">💊</div>
+<h3>Atorvastatin</h3>
+<p class="med-stock">Stock: 610,000 units</p>
+<p class="med-prescribed">Prescribed: 465,000 times</p>
+<p class="med-events">Adverse Events: 450</p>
+</div>
+<div class="med-card">
+<div class="med-icon">💊</div>
+<h3>Paracetamol</h3>
+<p class="med-stock">Stock: 1,680,000 units</p>
+<p class="med-prescribed">Prescribed: 1,140,000 times</p>
+<p class="med-events">Adverse Events: 380</p>
+</div>
+<div class="med-card">
+<div class="med-icon">💊</div>
+<h3>Omeprazole</h3>
+<p class="med-stock">Stock: 650,000 units</p>
+<p class="med-prescribed">Prescribed: 490,000 times</p>
+<p class="med-events">Adverse Events: 320</p>
+</div>
+<div class="med-card">
+<div class="med-icon">💊</div>
+<h3>Azithromycin</h3>
+<p class="med-stock">Stock: 470,000 units</p>
+<p class="med-prescribed">Prescribed: 350,000 times</p>
+<p class="med-events">Adverse Events: 285</p>
+</div>
+</div>
+</div>
+<div id="analytics-section" class="section-content">
+<div class="section-header">
+<h2>Advanced Healthcare Analytics</h2>
+<p>Detailed insights and performance metrics - 2025</p>
+</div>
+<div class="analytics-content">
+<div class="analytics-card">
+<h3>📈 Key Performance Metrics</h3>
+<ul>
+<li>Average Patient Age: 43.2 years</li>
+<li>Average Hospital Stay: 4.8 days</li>
+<li>Patient Satisfaction Score: 91.3%</li>
+<li>Readmission Rate: 9.8%</li>
+<li>Bed Occupancy Rate: 84%</li>
+<li>Emergency Response Time: 6.2 min</li>
+</ul>
+</div>
+<div class="analytics-card">
+<h3>🎯 Clinical Outcomes</h3>
+<ul>
+<li>Treatment Success Rate: 94.5%</li>
+<li>Surgery Success Rate: 97.1%</li>
+<li>ICU Survival Rate: 89.2%</li>
+<li>Medication Adherence: 81.7%</li>
+<li>Follow-up Compliance: 76.4%</li>
+<li>Recovery Rate: 90.6%</li>
+</ul>
+</div>
+<div class="analytics-card">
+<h3>💡 Population Health Insights</h3>
+<ul>
+<li>Most Common: Diabetes (720K patients)</li>
+<li>Peak Consultation Hours: 9 AM - 12 PM</li>
+<li>Top Insurance: Medicare (820K)</li>
+<li>Vaccination Coverage: 95.8%</li>
+<li>Chronic Disease Prevalence: 34%</li>
+<li>Preventive Care Uptake: 71%</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<footer class="footer">
+<p>
+© 2025 National Healthcare Oversight Organization | Secure Healthcare Data Management System
+</p>
+</footer>
+</main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
